@@ -14,15 +14,17 @@ game_solution = (item1, item2, item3, item4)
 turn_counter = 8
 
 #Player 1 enter your name
-#player1_name = input("Player 1 enter your name.")
+player1_name = input("Player 1 enter your name.")
 #Player 2 enter your name
-#player2_name = input("Player 2 enter your name.")
+player2_name = input("Player 2 enter your name.")
 
+
+#Do we want to put the entire game within a big while loop for the turn counter?
 #Ask player to input a guess
+print("%s input your guess. Enter four characters separated by a space."%player1_name)
+guess = 
 
-
-
-print(game_solution)
+#print(game_solution)
 
 
 
