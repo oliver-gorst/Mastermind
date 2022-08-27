@@ -18,7 +18,7 @@ turn_counter = 8
 #Player 2 enter your name
 #player2_name = input("Player 2 enter your name.")
 
-
+#Ask player to input a guess
 
 
 
