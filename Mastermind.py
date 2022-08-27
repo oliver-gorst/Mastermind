@@ -13,8 +13,10 @@ game_solution = (item1, item2, item3, item4)
 #Setup the turn counter
 turn_counter = 8
 
-
-
+#Player 1 enter your name
+#player1_name = input("Player 1 enter your name.")
+#Player 2 enter your name
+#player2_name = input("Player 2 enter your name.")
 
 
 
