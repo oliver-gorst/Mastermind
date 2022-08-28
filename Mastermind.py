@@ -10,12 +10,8 @@ item3 = random.choice(possible_options)
 item4 = random.choice(possible_options)
 game_solution = (item1, item2, item3, item4)
 
-
-
 #Setup the turn counter
 turn_counter = 8
-
-
 
 #Player 1 enter your name
 player1_name = input("Player 1 enter your name.")
@@ -45,10 +41,11 @@ HitCount = 0
 BlowCount = 0
 
 #Print the guess, so the history can be shown of each guess and results combination
+#Add some time delays before printing items so it feels paced better
 print(tuple_guess)
 
 #For each guess, figure out if its in the game solution, and if it is in the right space
-
+#Think about how to deal with or search for duplicates
 
 
 
