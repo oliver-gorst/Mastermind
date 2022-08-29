@@ -1,4 +1,5 @@
 import random
+import time
 
 #The six possible symbols will be ~, !, @, #, $, and %
 possible_options = ['~', '!', '@', '#', '$', '%']
@@ -41,14 +42,25 @@ HitCount = 0
 BlowCount = 0
 
 #Print the guess, so the history can be shown of each guess and results combination
-#Add some time delays before printing items so it feels paced better
+time.sleep(1)
 print(tuple_guess)
 
 #For each guess, figure out if its in the game solution, and if it is in the right space
 #Think about how to deal with or search for duplicates
 
+#Each guess should print out the entire board of guesses and hits/blows so it can be seen each time
 
-
-
-
+#Loop through each item in the guess, and check it against the solution
+itemCount = 0
+for items in tuple_guess:
+    if items == game_solution(itemCount):
+        #This is a hit
+        itemCount = itemCount + 1
+    else:
+        itemCount = itemCount + 1
+    
+for items in tuple_guess:   
+    if items in game_solution:
+        #This is a blow, once it has been subtracted from the hits
+        print("Placeholder")
 
