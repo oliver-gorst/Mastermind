@@ -2,8 +2,8 @@
 exampleSolution = ['@', '#', '$', '%']
 
 #Setup example guess
-#This example is going to have 1 hit, 2 blow, and 1 character which are not in the solution
-exampleGuess = ['%', '#', '~', '$']
+#This example is going to have 1 hit, 2 blow, and 1 duplicate character which should not be counted
+exampleGuess = ['%', '#', '%', '$']
 
 hitCount = 0
 blowCount = 0
@@ -27,9 +27,13 @@ print(hitCount)
 #If item from guess is in solution, add a 1 to the count, don't need to care about the quanitity in the list
 
 #Simple version of same code below
+startingCount = 0
 for items in exampleGuess:
     if items in exampleSolution:
-        blow
+        startingCount = startingCount + 1
+        
+
+print(startingCount)
 
 
 
@@ -45,10 +49,10 @@ def common_elements(exampleGuess, exampleSolution):
     return length
 
 #Combine this into the function above
-calcBlow = common_elements(exampleGuess, exampleSolution)
-blowCount = calcBlow - hitCount
+#calcBlow = common_elements(exampleGuess, exampleSolution)
+#blowCount = calcBlow - hitCount
 
-print("The blow count is...")
-print (blowCount)
+#print("The blow count is...")
+#print (blowCount)
 
 #Can you put the entire hit and blow searching into a single function that can be called?
