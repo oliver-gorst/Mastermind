@@ -31,9 +31,14 @@ startingCount = 0
 for items in exampleGuess:
     if items in exampleSolution:
         startingCount = startingCount + 1
-        
+        #If the number is in the Guess twice, it needs to be in the solution twice to count
+        #For each number check how many times it is in the guess (so far?), then check the solution for that many instances in order to count it
 
-print(startingCount)
+
+      
+blowCount = startingCount - hitCount
+print("The blow count is...")
+print(blowCount)
 
 
 
