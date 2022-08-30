@@ -28,11 +28,15 @@ print(hitCount)
 
 #Simple version of same code below
 startingCount = 0
+temporarySolution = exampleSolution
+#Which version do you loop through? The temporary version or the complete version?
 for items in exampleGuess:
     if items in exampleSolution:
         startingCount = startingCount + 1
         #If the number is in the Guess twice, it needs to be in the solution twice to count
-        #For each number check how many times it is in the guess (so far?), then check the solution for that many instances in order to count it
+        #If the number is in the solution twice, it needs to be in the guess twice to count
+        #In the blow count calculator, you need to temporaility remove an item from the solution list, so that it can't be found again by a future item in the guess
+        #May need to make a new temporary version of the example Solution that can be destroyed for each test
 
 
       
