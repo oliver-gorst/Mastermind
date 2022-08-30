@@ -22,11 +22,23 @@ print("The hit count is...")
 print(hitCount)
 
 
-#Find the number of total blows, and subtract the number of hits from
+#Find the number of total blows, and subtract the number of hits
+#Think there might be a better way to do this
+#If item from guess is in solution, add a 1 to the count, don't need to care about the quanitity in the list
+
+#Simple version of same code below
+for items in exampleGuess:
+    if items in exampleSolution:
+        blow
+
+
+
+
 def common_elements(exampleGuess, exampleSolution):
     result = []
     for element in exampleGuess:
         if element in exampleSolution:
+            #Stop duplicate elements being recorded at this point
             result.append(element)
     length = len(result)
     #print(length)
@@ -39,6 +51,4 @@ blowCount = calcBlow - hitCount
 print("The blow count is...")
 print (blowCount)
 
-
-#Need to fix the entire program to not count duplicates
 #Can you put the entire hit and blow searching into a single function that can be called?
