@@ -1,9 +1,9 @@
 #Setup the example solution to test against instead of a randomized version in the game
-exampleSolution = ['@', '#', '$', '%']
+exampleSolution = ['@', '#', '$', '@']
 
 #Setup example guess
 #This example is going to have 1 hit, 2 blow, and 1 duplicate character which should not be counted
-exampleGuess = ['%', '#', '%', '$']
+exampleGuess = ['%', '#', '@', '$']
 
 hitCount = 0
 blowCount = 0
@@ -22,46 +22,21 @@ print("The hit count is...")
 print(hitCount)
 
 
-#Find the number of total blows, and subtract the number of hits
-#Think there might be a better way to do this
-#If item from guess is in solution, add a 1 to the count, don't need to care about the quanitity in the list
 
-#Simple version of same code below
 startingCount = 0
+#Create a new version of the game solution where items which have been counted can be removed
 temporarySolution = exampleSolution
-#Which version do you loop through? The temporary version or the complete version?
 for items in exampleGuess:
-    if items in exampleSolution:
+    #Search for items which are common between the guess and the solution
+    if items in temporarySolution:
         startingCount = startingCount + 1
-        #If the number is in the Guess twice, it needs to be in the solution twice to count
-        #If the number is in the solution twice, it needs to be in the guess twice to count
-        #In the blow count calculator, you need to temporaility remove an item from the solution list, so that it can't be found again by a future item in the guess
-        #May need to make a new temporary version of the example Solution that can be destroyed for each test
-
-
-      
+        #Remove the counted item from the temporary solution so that it can not be counted twice
+        temporarySolution.remove(items)
+#Subtract the hits which have already been counted earlier but still count as blows in this code block
 blowCount = startingCount - hitCount
 print("The blow count is...")
 print(blowCount)
 
 
-
-
-def common_elements(exampleGuess, exampleSolution):
-    result = []
-    for element in exampleGuess:
-        if element in exampleSolution:
-            #Stop duplicate elements being recorded at this point
-            result.append(element)
-    length = len(result)
-    #print(length)
-    return length
-
 #Combine this into the function above
-#calcBlow = common_elements(exampleGuess, exampleSolution)
-#blowCount = calcBlow - hitCount
-
-#print("The blow count is...")
-#print (blowCount)
-
 #Can you put the entire hit and blow searching into a single function that can be called?
