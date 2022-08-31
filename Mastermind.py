@@ -9,23 +9,81 @@ item1 = random.choice(possible_options)
 item2 = random.choice(possible_options)
 item3 = random.choice(possible_options)
 item4 = random.choice(possible_options)
-game_solution = (item1, item2, item3, item4)
+gameSolution = (item1, item2, item3, item4)
 
 #Setup the turn counter
-turn_counter = 8
+turnCounter = 8
 
 #Player 1 enter your name
-player1_name = input("Player 1 enter your name.")
+player1Name = input("Player 1 enter your name.")
 #Player 2 enter your name
-player2_name = input("Player 2 enter your name.")
+player2Name = input("Player 2 enter your name.")
+currentPlayer = ""
 
 
-#Do we want to put the entire game within a big while loop for the turn counter?
-#Ask player to input a guess 
-print("{} input your guess. Enter four characters from ~, !, @, #, $, and %".format(player1_name))
+while turnCounter > 0:
 
-#Do we need to check to make sure that there are only and exactly 4 characters, and that they are from the list of possible options
-guess = input("")
+    #Check if turn is odd or even to see if the person guessing should be Player 1 or Player 2
+    if turnCounter % 2 == 0:
+        currentPlayer = player1Name
+    else:
+        currentPlayer = player2Name
+    
+    #Ask player to input a guess
+    print("{} input your guess. Enter four characters from ~, !, @, #, $, and %".format(currentPlayer))
+    
+    guess = input("")
+    #Need to check to make sure that there are only and exactly 4 characters, and that they are from the list of possible options
+    
+    #Convert 4 characters from guess into list of characters
+    guessList = list(guess)
+
+    #Check if the guess matches the solution and the game is over
+    if guessList == gameSolution:
+        print("Congratulations, you have won the game!")
+        quit()
+    else:
+        continue
+
+
+
+
+
+
+
+
+
+
+
+#Game is over reveal the solution at the end
+print("The game is over, the solution was...")
+print(gameSolution)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #Validate the input from the user
 #for characters in guess:
@@ -33,34 +91,4 @@ guess = input("")
 #        print("No, I won't run")
 #    else:
 #        continue
-
-#Convert input 4 character text into tuple
-tuple_guess = tuple(guess)
-
-#Setup the initial hit and blow count
-HitCount = 0
-BlowCount = 0
-
-#Print the guess, so the history can be shown of each guess and results combination
-time.sleep(1)
-print(tuple_guess)
-
-#For each guess, figure out if its in the game solution, and if it is in the right space
-#Think about how to deal with or search for duplicates
-
-#Each guess should print out the entire board of guesses and hits/blows so it can be seen each time
-
-#Loop through each item in the guess, and check it against the solution
-itemCount = 0
-for items in tuple_guess:
-    if items == game_solution(itemCount):
-        #This is a hit
-        itemCount = itemCount + 1
-    else:
-        itemCount = itemCount + 1
-    
-for items in tuple_guess:   
-    if items in game_solution:
-        #This is a blow, once it has been subtracted from the hits
-        print("Placeholder")
 

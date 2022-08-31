@@ -39,4 +39,7 @@ def HitBlowCalc (exampleGuess, exampleSolution):
 
 
 
+
 HitBlowCalc(exampleGuess, exampleSolution)
+
+#Need to find a way to get the variables out of the function, maybe break into 2 functions and use return?
