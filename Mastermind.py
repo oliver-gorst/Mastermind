@@ -14,6 +14,14 @@ gameSolution = (item1, item2, item3, item4)
 #Setup the turn counter
 turnCounter = 8
 
+
+
+'''
+#Add Hit/Blow Function in here
+'''
+
+
+
 #Player 1 enter your name
 player1Name = input("Player 1 enter your name.")
 #Player 2 enter your name
@@ -44,6 +52,8 @@ while turnCounter > 0:
         quit()
     else:
         continue
+    
+
 
 
 

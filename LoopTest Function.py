@@ -7,7 +7,10 @@ exampleGuess = ['%', '#', '@', '$']
 
 
 def HitBlowCalc (exampleGuess, exampleSolution):
+    #Define global variables to be used outside of function
+    global hitCount
     hitCount = 0
+    global blowCount
     blowCount = 0
 
     #Loop to determine the number of hits
@@ -19,9 +22,8 @@ def HitBlowCalc (exampleGuess, exampleSolution):
             itemCount = itemCount + 1
         else:
             itemCount = itemCount + 1
-    print("The hit count is...")
-    print(hitCount)
-    
+    #print("The hit count is...")
+    #print(hitCount)
 
     #Loop to determine the number of blows
     startingCount = 0
@@ -33,8 +35,11 @@ def HitBlowCalc (exampleGuess, exampleSolution):
             exampleSolution.remove(items)
     #Subtract the hits which have already been counted earlier but still count as blows in this code block
     blowCount = startingCount - hitCount
-    print("The blow count is...")
-    print(blowCount)
+    #print("The blow count is...")
+    #print(blowCount)
+    
+    #Return variables at end of function
+    return (hitCount, blowCount)
 
 
 
@@ -42,4 +47,7 @@ def HitBlowCalc (exampleGuess, exampleSolution):
 
 HitBlowCalc(exampleGuess, exampleSolution)
 
+print("New Line")
+print(hitCount)
+print(blowCount)
 #Need to find a way to get the variables out of the function, maybe break into 2 functions and use return?
