@@ -21,6 +21,7 @@ def HitBlowCalc (exampleGuess, exampleSolution):
             itemCount = itemCount + 1
     print("The hit count is...")
     print(hitCount)
+    
 
     #Loop to determine the number of blows
     startingCount = 0
