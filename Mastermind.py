@@ -17,7 +17,7 @@ turnCounter = 8
 
 
 '''
-#Add Hit/Blow Function in here....
+#Add Hit/Blow Function in here.....
 '''
 
 
