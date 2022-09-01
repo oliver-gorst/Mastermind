@@ -24,6 +24,12 @@ def HitBlowCalc (exampleGuess, exampleSolution):
     hitCount = int(0)
     global blowCount
     blowCount = int(0)
+    global hitBlowString
+    hitBlowString = ''
+    global hitTextLoop 
+    #hitTextLoop = 0
+    global blowTextLoop
+    #blowTextLoop = 0
 
     #Loop to determine the number of hits
     itemCount = int(0)
@@ -50,6 +56,18 @@ def HitBlowCalc (exampleGuess, exampleSolution):
     #print("The blow count is...")
     #print(blowCount)
     
+    #Make loop that adds letters to string for each Hit and then 
+    hitTextLoop = hitCount
+    blowTextLoop = blowCount
+
+    while hitTextLoop > 0:
+        hitBlowString.append('H')
+        hitTextLoop = hitTextLoop - 1
+
+    while blowTextLoop > 0:
+        hitBlowString.append('B')
+        blowTextLoop = blowTextLoop - 1
+
     #Return variables at end of function
     return (hitCount, blowCount)
 
@@ -61,8 +79,10 @@ player1Name = input("Player 1 enter your name.")
 player2Name = input("Player 2 enter your name.")
 currentPlayer = ""
 
-#Setup initial data structure to show guesses
+#Setup initial data structure to show guesses, add items to list, for items in list print item to put it on a new line
+printableGuesses = []
 #Setup initial data structure to show hit and blows associated with guess
+printableHitBlow = []
 
 
 while turnCounter > 0:
@@ -92,10 +112,18 @@ while turnCounter > 0:
     #Call Hit/Blow function here
     HitBlowCalc(guess, gameSolution)
 
+    #Need to convert numbers of hits and blows into simple format of H's and B's
+
+    #Add guess to list of existing guesses
+    printableGuesses.append(guess)
+
+    #Add hit blow calculation to list of existing hit blow calculations
+    #printableHitBlow.append()
+
     #Print the guess
     print("The guess is: {}".format(guess))
     #Print the hits and blows
-    print("THere are {} hits.".format(hitCount))
+    print("There are {} hits.".format(hitCount))
     print("There are {} blows.".format(blowCount))
 
     #Print all previous guesses and results
