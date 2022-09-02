@@ -16,8 +16,6 @@ gameSolution = ['@', '#', '$', '@']
 #Setup the turn counter
 turnCounter = 8
 
-
-
 def HitBlowCalc (exampleGuess, exampleSolution):
     #Define global variables to be used outside of function
     global hitCount
@@ -27,21 +25,16 @@ def HitBlowCalc (exampleGuess, exampleSolution):
     global hitBlowString
     hitBlowString = ''
     global hitTextLoop 
-    #hitTextLoop = 0
     global blowTextLoop
-    #blowTextLoop = 0
 
     #Loop to determine the number of hits
     itemCount = int(0)
     for items in exampleGuess:
         if items == exampleSolution[itemCount]:
-            print("There is a hit!")
             hitCount = hitCount + 1
             itemCount = itemCount + 1
         else:
             itemCount = itemCount + 1
-    #print("The hit count is...")
-    #print(hitCount)
 
     #Loop to determine the number of blows
     startingCount = 0
@@ -53,23 +46,22 @@ def HitBlowCalc (exampleGuess, exampleSolution):
             exampleSolution.remove(items)
     #Subtract the hits which have already been counted earlier but still count as blows in this code block
     blowCount = startingCount - hitCount
-    #print("The blow count is...")
-    #print(blowCount)
     
+
     #Make loop that adds letters to string for each Hit and then 
     hitTextLoop = hitCount
     blowTextLoop = blowCount
 
     while hitTextLoop > 0:
-        hitBlowString.append('H')
+        hitBlowString = hitBlowString + 'H'
         hitTextLoop = hitTextLoop - 1
 
     while blowTextLoop > 0:
-        hitBlowString.append('B')
+        hitBlowString = hitBlowString + 'B'
         blowTextLoop = blowTextLoop - 1
 
     #Return variables at end of function
-    return (hitCount, blowCount)
+    return (hitCount, blowCount, hitBlowString)
 
 
 
@@ -112,14 +104,11 @@ while turnCounter > 0:
     #Call Hit/Blow function here
     HitBlowCalc(guess, gameSolution)
 
-    #Need to convert numbers of hits and blows into simple format of H's and B's
-
     #Add guess to list of existing guesses
     printableGuesses.append(guess)
+    printableHitBlow.append(hitBlowString)
 
-    #Add hit blow calculation to list of existing hit blow calculations
-    #printableHitBlow.append()
-
+    
     #Print the guess
     print("The guess is: {}".format(guess))
     #Print the hits and blows
@@ -128,6 +117,8 @@ while turnCounter > 0:
 
     #Print all previous guesses and results
     #Append the current guess and results to something that can be called again next version to be printed
+    print(printableGuesses)
+    print(printableHitBlow)
 
     turnCounter = turnCounter - 1
 
