@@ -17,6 +17,8 @@ gameSolution = ['@', '#', '$', '@']
 turnCounter = 8
 
 def HitBlowCalc (exampleGuess, exampleSolution):
+    #exampleSolution = gameSolution
+    
     #Define global variables to be used outside of function
     global hitCount
     hitCount = int(0)
@@ -24,11 +26,15 @@ def HitBlowCalc (exampleGuess, exampleSolution):
     blowCount = int(0)
     global hitBlowString
     hitBlowString = ''
-    global hitTextLoop 
+    global hitTextLoop
+    hitTextLoop = 0
     global blowTextLoop
+    blowTextLoop = 0
 
     #Loop to determine the number of hits
+    global itemCount
     itemCount = int(0)
+
     for items in exampleGuess:
         if items == exampleSolution[itemCount]:
             hitCount = hitCount + 1
@@ -37,7 +43,9 @@ def HitBlowCalc (exampleGuess, exampleSolution):
             itemCount = itemCount + 1
 
     #Loop to determine the number of blows
+    global startingCount
     startingCount = 0
+
     for items in exampleGuess:
         #Search for items which are common between the guess and the solution
         if items in exampleSolution:
@@ -47,7 +55,6 @@ def HitBlowCalc (exampleGuess, exampleSolution):
     #Subtract the hits which have already been counted earlier but still count as blows in this code block
     blowCount = startingCount - hitCount
     
-
     #Make loop that adds letters to string for each Hit and then 
     hitTextLoop = hitCount
     blowTextLoop = blowCount
@@ -100,9 +107,10 @@ while turnCounter > 0:
         print("Congratulations, you have won the game!")
         quit()
 
-    
+    #Need to recall gameSolution because it has had items removed from the previous check
+    gameSolution = ['@', '#', '$', '@']
     #Call Hit/Blow function here
-    HitBlowCalc(guess, gameSolution)
+    HitBlowCalc(guessList, gameSolution)
 
     #Add guess to list of existing guesses
     printableGuesses.append(guess)
