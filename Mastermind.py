@@ -2,14 +2,14 @@ import random
 import time
 
 #The six possible symbols will be ~, !, @, #, $, and %
-possible_options = ['~', '!', '@', '#', '$', '%']
+PossibleOptions = ['~', '!', '@', '#', '$', '%']
 
-#create a list of 4 items, pulling a random item from the list above for each item
-item1 = random.choice(possible_options)
-item2 = random.choice(possible_options)
-item3 = random.choice(possible_options)
-item4 = random.choice(possible_options)
-global MeowGameSolution
+#Create a list of 4 items, pulling a random item from the list above for each item
+item1 = random.choice(PossibleOptions)
+item2 = random.choice(PossibleOptions)
+item3 = random.choice(PossibleOptions)
+item4 = random.choice(PossibleOptions)
+#global MeowGameSolution
 MeowGameSolution = [item1, item2, item3, item4]
 #Temporary game solution for testing
 #gameSolution = ['@', '#', '$', '@']
@@ -111,7 +111,30 @@ while turnCounter > 0:
         quit()
 
     #Need to recall gameSolution because it has had items removed from the previous check
+    
+
+
+
+
+
+
+
+    #Something in here doesn't work. When defining using the exact characters, the function works
+    #When defining using the original MeowGameSolution, the function fails
+    
     gameSolution = MeowGameSolution
+    gameSolution = ['@', '#', '$', '@']
+    #print(MeowGameSolution)
+
+
+
+
+
+
+
+
+
+
     #Call Hit/Blow function here
     HitBlowCalc(guessList, gameSolution)
 
