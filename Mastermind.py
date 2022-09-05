@@ -5,13 +5,14 @@ import time
 possible_options = ['~', '!', '@', '#', '$', '%']
 
 #create a list of 4 items, pulling a random item from the list above for each item
-#item1 = random.choice(possible_options)
-#item2 = random.choice(possible_options)
-#item3 = random.choice(possible_options)
-#item4 = random.choice(possible_options)
-#gameSolution = [item1, item2, item3, item4]
+item1 = random.choice(possible_options)
+item2 = random.choice(possible_options)
+item3 = random.choice(possible_options)
+item4 = random.choice(possible_options)
+global MeowGameSolution
+MeowGameSolution = [item1, item2, item3, item4]
 #Temporary game solution for testing
-gameSolution = ['@', '#', '$', '@']
+#gameSolution = ['@', '#', '$', '@']
 
 #Setup the turn counter
 turnCounter = 8
@@ -82,6 +83,8 @@ currentPlayer = ""
 printableGuesses = []
 #Setup initial data structure to show hit and blows associated with guess
 printableHitBlow = []
+#Setup initial dictionary for easy printing
+printableDict = {}
 
 
 while turnCounter > 0:
@@ -103,18 +106,21 @@ while turnCounter > 0:
     
 
     #Check if the guess matches the solution and the game is over
-    if guessList == gameSolution:
+    if guessList == MeowGameSolution:
         print("Congratulations, you have won the game!")
         quit()
 
     #Need to recall gameSolution because it has had items removed from the previous check
-    gameSolution = ['@', '#', '$', '@']
+    gameSolution = MeowGameSolution
     #Call Hit/Blow function here
     HitBlowCalc(guessList, gameSolution)
 
     #Add guess to list of existing guesses
-    printableGuesses.append(guess)
-    printableHitBlow.append(hitBlowString)
+    #printableGuesses.append(guess)
+    #printableHitBlow.append(hitBlowString)
+
+    #Add items into a key:result dictionary in order to make printing cleaner
+    printableDict[guess] = hitBlowString
 
     
     #Print the guess
@@ -125,8 +131,11 @@ while turnCounter > 0:
 
     #Print all previous guesses and results
     #Append the current guess and results to something that can be called again next version to be printed
-    print(printableGuesses)
-    print(printableHitBlow)
+    #print(printableGuesses)
+    #print(printableHitBlow)
+    print(printableDict)
+
+
 
     turnCounter = turnCounter - 1
 
