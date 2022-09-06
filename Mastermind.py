@@ -122,11 +122,10 @@ while turnCounter > 0:
     #Something in here doesn't work. When defining using the exact characters, the function works
     #When defining using the original MeowGameSolution, the function fails
     
+    
     gameSolution = MeowGameSolution
-    gameSolution = ['@', '#', '$', '@']
+    #gameSolution = ['@', '#', '$', '@']
     #print(MeowGameSolution)
-
-
 
 
 
