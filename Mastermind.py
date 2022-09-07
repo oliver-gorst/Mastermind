@@ -1,5 +1,5 @@
 import random
-import time
+#import time
 
 #The six possible symbols will be ~, !, @, #, $, and %
 PossibleOptions = ['~', '!', '@', '#', '$', '%']
@@ -9,8 +9,8 @@ item1 = random.choice(PossibleOptions)
 item2 = random.choice(PossibleOptions)
 item3 = random.choice(PossibleOptions)
 item4 = random.choice(PossibleOptions)
-#global MeowGameSolution
 MeowGameSolution = [item1, item2, item3, item4]
+#print(MeowGameSolution)
 #Temporary game solution for testing
 #gameSolution = ['@', '#', '$', '@']
 
@@ -18,8 +18,6 @@ MeowGameSolution = [item1, item2, item3, item4]
 turnCounter = 8
 
 def HitBlowCalc (exampleGuess, exampleSolution):
-    #exampleSolution = gameSolution
-    
     #Define global variables to be used outside of function
     global hitCount
     hitCount = int(0)
@@ -122,7 +120,7 @@ while turnCounter > 0:
     #Something in here doesn't work. When defining using the exact characters, the function works
     #When defining using the original MeowGameSolution, the function fails
     
-    
+    #Both gameSolution and MeowGameSolution are getting altered by deleting a piece of the list that was guessed correctly
     gameSolution = MeowGameSolution
     #gameSolution = ['@', '#', '$', '@']
     #print(MeowGameSolution)
