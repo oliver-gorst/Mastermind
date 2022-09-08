@@ -20,3 +20,7 @@ CopyCatSolution = MeowGameSolution
 print(CopyCatSolution)
 
 
+CopyCatSolution.remove(CopyCatSolution[0])
+
+print(CopyCatSolution)
+print(MeowGameSolution)
