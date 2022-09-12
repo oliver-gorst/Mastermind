@@ -24,3 +24,6 @@ CopyCatSolution.remove(CopyCatSolution[0])
 
 print(CopyCatSolution)
 print(MeowGameSolution)
+
+
+#look into self.variable to see if that solves the problem
