@@ -14,7 +14,7 @@ MeowGameSolution = [item1, item2, item3, item4]
 print(MeowGameSolution)
 
 
-CopyCatSolution = MeowGameSolution
+CopyCatSolution = MeowGameSolution[:]
 
 
 print(CopyCatSolution)
@@ -27,3 +27,5 @@ print(MeowGameSolution)
 
 
 #look into self.variable to see if that solves the problem
+
+
