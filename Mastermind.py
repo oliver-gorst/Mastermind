@@ -9,10 +9,7 @@ item1 = random.choice(PossibleOptions)
 item2 = random.choice(PossibleOptions)
 item3 = random.choice(PossibleOptions)
 item4 = random.choice(PossibleOptions)
-MeowGameSolution = [item1, item2, item3, item4]
-#print(MeowGameSolution)
-#Temporary game solution for testing
-#gameSolution = ['@', '#', '$', '@']
+InitialGameSolution = [item1, item2, item3, item4]
 
 #Setup the turn counter
 turnCounter = 8
@@ -102,47 +99,22 @@ while turnCounter > 0:
     #Convert 4 characters from guess into list of characters
     guessList = list(guess)
     
-
     #Check if the guess matches the solution and the game is over
-    if guessList == MeowGameSolution:
+    if guessList == InitialGameSolution:
         print("Congratulations, you have won the game!")
         quit()
 
-    #Need to recall gameSolution because it has had items removed from the previous check
-    
-
-
-
-
-
-
-
-    #Something in here doesn't work. When defining using the exact characters, the function works
-    #When defining using the original MeowGameSolution, the function fails
-    
-    #Both gameSolution and MeowGameSolution are getting altered by deleting a piece of the list that was guessed correctly
-    gameSolution = MeowGameSolution
-    #gameSolution = ['@', '#', '$', '@']
-    #print(MeowGameSolution)
-
-
-
-
-
-
+  
+    #This stops initial game solution from being altered during the function
+    gameSolution = InitialGameSolution[:]
 
 
     #Call Hit/Blow function here
     HitBlowCalc(guessList, gameSolution)
 
-    #Add guess to list of existing guesses
-    #printableGuesses.append(guess)
-    #printableHitBlow.append(hitBlowString)
-
     #Add items into a key:result dictionary in order to make printing cleaner
     printableDict[guess] = hitBlowString
 
-    
     #Print the guess
     print("The guess is: {}".format(guess))
     #Print the hits and blows
@@ -155,18 +127,7 @@ while turnCounter > 0:
     #print(printableHitBlow)
     print(printableDict)
 
-
-
     turnCounter = turnCounter - 1
-
-
-
-
-
-
-
-
-
 
 
 

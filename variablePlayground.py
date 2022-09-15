@@ -10,19 +10,22 @@ item3 = random.choice(PossibleOptions)
 item4 = random.choice(PossibleOptions)
 MeowGameSolution = [item1, item2, item3, item4]
 
-
+print("Meow game solution is...")
 print(MeowGameSolution)
 
 
 CopyCatSolution = MeowGameSolution[:]
 
 
+print("Copy cat solution is...")
 print(CopyCatSolution)
 
 
 CopyCatSolution.remove(CopyCatSolution[0])
 
+print("Copy cat solution is...")
 print(CopyCatSolution)
+print("Meow game solution is...")
 print(MeowGameSolution)
 
 
