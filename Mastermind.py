@@ -134,7 +134,7 @@ while turnCounter > 0:
 #Game is over reveal the solution at the end
 print("The game is over, the solution was...")
 print(gameSolution)
-
+#This game works now
 
 
 
