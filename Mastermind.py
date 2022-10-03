@@ -94,7 +94,8 @@ while turnCounter > 0:
     print("{} input your guess. Enter four characters from ~, !, @, #, $, and %".format(currentPlayer))
     
     guess = input("")
-    #Need to check to make sure that there are only and exactly 4 characters, and that they are from the list of possible options
+    #Guess needs to be exactly 4 charcters
+    #Guess needs to only contain the available symbols
     
     #Convert 4 characters from guess into list of characters
     guessList = list(guess)
