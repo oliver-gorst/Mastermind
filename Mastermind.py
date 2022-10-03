@@ -95,6 +95,7 @@ while turnCounter > 0:
     
     guess = input("")
     #Guess needs to be exactly 4 charcters
+    #if len(guess) does not equal 4 characters -> reject the input
     #Guess needs to only contain the available symbols
     
     #Convert 4 characters from guess into list of characters
