@@ -93,10 +93,35 @@ while turnCounter > 0:
     #Ask player to input a guess
     print("{} input your guess. Enter four characters from ~, !, @, #, $, and %".format(currentPlayer))
     
+
+
+
+
+
+
+
+
     guess = input("")
+    # https://stackoverflow.com/questions/23294658/asking-the-user-for-input-until-they-give-a-valid-response
     #Guess needs to be exactly 4 charcters
-    #if len(guess) does not equal 4 characters -> reject the input
-    #Guess needs to only contain the available symbols
+    if len(guess) != 4:
+        print("Make sure the length is correct")
+        #How to ask them to retype the input?
+
+    for characters in guess:
+        if characters in PossibleOptions:
+            continue 
+        else:
+            print("Only use the correct characters.")
+            #How to ask them to retype the input?
+
+    
+
+
+
+
+
+
     
     #Convert 4 characters from guess into list of characters
     guessList = list(guess)
