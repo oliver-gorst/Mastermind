@@ -104,6 +104,7 @@ while turnCounter > 0:
     guess = input("")
     # https://stackoverflow.com/questions/23294658/asking-the-user-for-input-until-they-give-a-valid-response
     #Guess needs to be exactly 4 charcters
+    #Update
     if len(guess) != 4:
         print("Make sure the length is correct")
         #How to ask them to retype the input?
