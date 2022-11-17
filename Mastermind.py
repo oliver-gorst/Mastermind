@@ -102,6 +102,7 @@ while turnCounter > 0:
 
     while True:
         guess = input("")
+        #This section is not working yet
         for characters in guess:
             if characters in PossibleOptions:
                 print("You have used the wrong characters.")
@@ -115,11 +116,6 @@ while turnCounter > 0:
             continue
         else:
             break
-
-
-
-
-
 
 
 
@@ -167,8 +163,9 @@ while turnCounter > 0:
 
 #Game is over reveal the solution at the end
 print("The game is over, the solution was...")
+#Reveal the solution in an easier to read version, remove the '' from each symbol
 print(gameSolution)
-#This game works now
+
 
 
 
