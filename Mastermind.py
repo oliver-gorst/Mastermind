@@ -102,7 +102,7 @@ while turnCounter > 0:
 
     while True:
         guess = input("")
-        #This section is not working yet
+        #This section is not working yet.
         for characters in guess:
             if characters in PossibleOptions:
                 print("You have used the wrong characters.")
