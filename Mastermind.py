@@ -97,7 +97,7 @@ while turnCounter > 0:
 
     
     # https://stackoverflow.com/questions/23294658/asking-the-user-for-input-until-they-give-a-valid-response
-    #Guess needs to be exactly 4 charcters
+    #Guess needs to be exactly 4 characters
 
     #Try asking chatGPT about how to validate this
 
