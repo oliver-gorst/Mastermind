@@ -99,7 +99,7 @@ while turnCounter > 0:
     # https://stackoverflow.com/questions/23294658/asking-the-user-for-input-until-they-give-a-valid-response
     #Guess needs to be exactly 4 charcters
 
-    #Try asking chatGPT about how to validate this, add this
+    #Try asking chatGPT about how to validate this
 
     while True:
         guess = input("")
